@@ -9,6 +9,11 @@ const title = "Sorting Articles";
 function App({articles}) {
     const [articlesList, setArticlesList] = useState(articles);
     
+    useEffect(() => {
+        sortByUpvotes(articles);
+    },[]);
+
+    
     const sortByUpvotes = () => {
       var newArticles = [];
       Object.assign(newArticles, articlesList);
